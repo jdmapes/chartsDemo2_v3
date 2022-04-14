@@ -13,6 +13,9 @@
 		2EA2FB582808BAC500B55181 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EA2FB562808BAC500B55181 /* Main.storyboard */; };
 		2EA2FB5A2808BAC800B55181 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EA2FB592808BAC800B55181 /* Assets.xcassets */; };
 		2EA2FB5D2808BAC800B55181 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EA2FB5B2808BAC800B55181 /* LaunchScreen.storyboard */; };
+		2EA2FB662808BAFC00B55181 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 2EA2FB652808BAFC00B55181 /* Charts */; };
+		2EA2FB682808BD1900B55181 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA2FB672808BD1800B55181 /* SecondViewController.swift */; };
+		2EA2FB6A2808BD2B00B55181 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA2FB692808BD2B00B55181 /* ThirdViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,8 @@
 		2EA2FB592808BAC800B55181 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2EA2FB5C2808BAC800B55181 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2EA2FB5E2808BAC800B55181 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2EA2FB672808BD1800B55181 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		2EA2FB692808BD2B00B55181 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EA2FB662808BAFC00B55181 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +69,8 @@
 				2EA2FB592808BAC800B55181 /* Assets.xcassets */,
 				2EA2FB5B2808BAC800B55181 /* LaunchScreen.storyboard */,
 				2EA2FB5E2808BAC800B55181 /* Info.plist */,
+				2EA2FB672808BD1800B55181 /* SecondViewController.swift */,
+				2EA2FB692808BD2B00B55181 /* ThirdViewController.swift */,
 			);
 			path = chartsDemo2;
 			sourceTree = "<group>";
@@ -83,6 +91,9 @@
 			dependencies = (
 			);
 			name = chartsDemo2;
+			packageProductDependencies = (
+				2EA2FB652808BAFC00B55181 /* Charts */,
+			);
 			productName = chartsDemo2;
 			productReference = 2EA2FB4D2808BAC500B55181 /* chartsDemo2.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +122,9 @@
 				Base,
 			);
 			mainGroup = 2EA2FB442808BAC500B55181;
+			packageReferences = (
+				2EA2FB642808BAFC00B55181 /* XCRemoteSwiftPackageReference "Charts" */,
+			);
 			productRefGroup = 2EA2FB4E2808BAC500B55181 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,7 +152,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EA2FB682808BD1900B55181 /* SecondViewController.swift in Sources */,
 				2EA2FB552808BAC500B55181 /* ViewController.swift in Sources */,
+				2EA2FB6A2808BD2B00B55181 /* ThirdViewController.swift in Sources */,
 				2EA2FB512808BAC500B55181 /* AppDelegate.swift in Sources */,
 				2EA2FB532808BAC500B55181 /* SceneDelegate.swift in Sources */,
 			);
@@ -356,6 +372,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2EA2FB642808BAFC00B55181 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2EA2FB652808BAFC00B55181 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2EA2FB642808BAFC00B55181 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2EA2FB452808BAC500B55181 /* Project object */;
 }
