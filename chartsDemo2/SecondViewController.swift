@@ -15,6 +15,20 @@ class SecondViewController: UIViewController, ChartViewDelegate {
         
         chartView.backgroundColor = .systemFill
         
+        chartView.rightAxis.enabled = false
+        
+        let yAxis = chartView.leftAxis
+        yAxis.labelFont = .boldSystemFont(ofSize: 14)
+        yAxis.setLabelCount(6, force: false)
+        yAxis.labelTextColor = .black
+        
+        chartView.xAxis.labelPosition = .bottom
+        chartView.xAxis.labelFont = .boldSystemFont(ofSize: 14)
+        chartView.xAxis.setLabelCount(6, force: false)
+        chartView.xAxis.axisLineColor = .systemFill
+        
+        chartView.animate(xAxisDuration: 2.5)
+        
         return chartView
     }()
     

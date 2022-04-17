@@ -11,7 +11,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="5qa-uG-Vmq">
             <objects>
-                <tabBarController id="8j7-RQ-GMf" sceneMemberID="viewController">
+                <tabBarController modalTransitionStyle="flipHorizontal" modalPresentationStyle="fullScreen" interfaceStyle="light" id="8j7-RQ-GMf" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XMd-XS-6xE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
