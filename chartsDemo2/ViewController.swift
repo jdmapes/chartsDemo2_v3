@@ -72,18 +72,12 @@ class ViewController: UIViewController, ChartViewDelegate {
             entries.append(BarChartDataEntry(x: Double(x), y: Double.random(in: 0...12)))
             entries2.append(BarChartDataEntry(x: Double(x), y: Double.random(in: 0...12)))
         }
-        
-        // Attempt to figure out how to create xAxis labeling
-//        for xValue in xValues.enumerated() {
-//            entries.append(BarChartDataEntry(x: Double(xValue)!, y: Double.random(in: 0...12)))
-//            entries2.append(BarChartDataEntry(x: Double(xValue)!, y: Double.random(in: 0...12)))
-//        }
        
         
         // Data set build
         let set = BarChartDataSet(entries: entries, label: "Session 1")
         let set2 = BarChartDataSet(entries: entries2, label: "Session 2")
-        set.colors = ChartColorTemplates.material()  // **FIXME**
+        set.colors = ChartColorTemplates.colorful()  // **FIXME**
         set2.colors = ChartColorTemplates.liberty()  // **FIXME**
         let data = BarChartData(dataSets: [set, set2])
         barChart.data = data
@@ -92,33 +86,6 @@ class ViewController: UIViewController, ChartViewDelegate {
         barChart.rightAxis.enabled = false
         barChart.center = view.center
     }
-    
-    
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//
-//        barChart.frame = CGRect(x: 0, y: 0,
-//                                width: self.view.frame.size.width,
-//                               height: self.view.frame.size.width)
-//        barChart.center = view.center
-//        view.addSubview(barChart)
-//
-//        var entries = [BarChartDataEntry]()
-//
-//        for x in 0..<10 {
-//            entries.append(BarChartDataEntry(x: Double(x),
-//                                             y: Double(x))
-//                           )
-//        }
-//
-//        let set = BarChartDataSet(entries: entries)
-//        set.colors = ChartColorTemplates.joyful()
-//
-//        let data = BarChartData(dataSet: set)
-//        barChart.data = data
-//
-//    }
-
 
 }
 
