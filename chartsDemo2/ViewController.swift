@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController, ChartViewDelegate {
     
 //    var barChart = BarChartView()
+    
+    lazy var xValues = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,8 +23,13 @@ class ViewController: UIViewController, ChartViewDelegate {
     
     private func createChart() {
         // Create bar chart
-        let barChart = BarChartView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width,
-                                                  height: view.frame.size.width))
+        let barChart = BarChartView(frame: CGRect(x: 0, y: 0,
+            width: view.frame.size.width,
+            height: view.frame.size.width))
+        
+        let days = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat"]
+        
+        barChart.dragEnabled = true
         
         
         // Configure the X axis
@@ -33,6 +40,11 @@ class ViewController: UIViewController, ChartViewDelegate {
         xAxis.labelFont = .boldSystemFont(ofSize: 14)
         xAxis.labelTextColor = .white
         xAxis.gridColor = .white
+        xAxis.granularityEnabled = true
+        xAxis.valueFormatter = IndexAxisValueFormatter(values:days)
+        xAxis.granularity = 1
+        
+        
         
         // Configure the Y Axis
         let yAxis = barChart.leftAxis
@@ -41,6 +53,7 @@ class ViewController: UIViewController, ChartViewDelegate {
         yAxis.labelTextColor = .white
         yAxis.gridColor = .white
         yAxis.axisMinimum = 0
+        yAxis.axisMaximum = 12
       
         // Configure legend
         let l = barChart.legend
@@ -59,15 +72,21 @@ class ViewController: UIViewController, ChartViewDelegate {
         
         // **FIXME** The method in which to pull data; here are two dataSets atm
         // Format [(date:String, time:(hours:Int, minutes: Int, seconds:Int ))]
-        for x in 0..<10 {
-            entries.append(BarChartDataEntry(x: Double(x), y: Double.random(in: 0...30)))
-            entries2.append(BarChartDataEntry(x: Double(x), y: Double.random(in: 0...30)))
+        for x in 0..<7 {
+            entries.append(BarChartDataEntry(x: Double(x), y: Double.random(in: 0...12)))
+            entries2.append(BarChartDataEntry(x: Double(x), y: Double.random(in: 0...12)))
         }
         
+        // Attempt to figure out how to create xAxis labeling
+//        for xValue in xValues.enumerated() {
+//            entries.append(BarChartDataEntry(x: Double(xValue)!, y: Double.random(in: 0...12)))
+//            entries2.append(BarChartDataEntry(x: Double(xValue)!, y: Double.random(in: 0...12)))
+//        }
+       
         
         // Data set build
-        let set = BarChartDataSet(entries: entries, label: "Day")
-        let set2 = BarChartDataSet(entries: entries2, label: "Session")
+        let set = BarChartDataSet(entries: entries, label: "Session 1")
+        let set2 = BarChartDataSet(entries: entries2, label: "Session 2")
         set.colors = ChartColorTemplates.material()  // **FIXME**
         set2.colors = ChartColorTemplates.liberty()  // **FIXME**
         let data = BarChartData(dataSets: [set, set2])
@@ -77,6 +96,7 @@ class ViewController: UIViewController, ChartViewDelegate {
         barChart.rightAxis.enabled = false
         barChart.center = view.center
     }
+    
     
 //    override func viewDidLayoutSubviews() {
 //        super.viewDidLayoutSubviews()
