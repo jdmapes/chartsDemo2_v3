@@ -43,6 +43,15 @@ class ViewController: UIViewController, ChartViewDelegate {
         yAxis.axisMinimum = 0
       
         // Configure legend
+        let l = barChart.legend
+        l.horizontalAlignment = .center
+        l.verticalAlignment = .bottom
+        l.orientation = .vertical
+        l.drawInside = false
+        l.form = .line
+        l.formSize = 9
+        l.font = UIFont(name: "HelveticaNeue-Light", size: 12)!
+        l.xEntrySpace = 6
         
         // Supply data
         var entries = [BarChartDataEntry]()
@@ -59,8 +68,8 @@ class ViewController: UIViewController, ChartViewDelegate {
         // Data set build
         let set = BarChartDataSet(entries: entries, label: "Day")
         let set2 = BarChartDataSet(entries: entries2, label: "Session")
-        set.colors = ChartColorTemplates.material()
-        set2.colors = ChartColorTemplates.material()
+        set.colors = ChartColorTemplates.material()  // **FIXME**
+        set2.colors = ChartColorTemplates.liberty()  // **FIXME**
         let data = BarChartData(dataSets: [set, set2])
         barChart.data = data
         
