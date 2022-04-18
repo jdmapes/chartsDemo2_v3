@@ -44,6 +44,8 @@ class ViewController: UIViewController, ChartViewDelegate {
         // Supply data
         var entries = [BarChartDataEntry]()
         var entries2 = [BarChartDataEntry]()
+        
+        // **FIXME** The method in which to pull data; here are two dataSets atm
         for x in 0..<10 {
             entries.append(BarChartDataEntry(x: Double(x), y: Double.random(in: 0...30)))
             entries2.append(BarChartDataEntry(x: Double(x), y: Double.random(in: 0...30)))
