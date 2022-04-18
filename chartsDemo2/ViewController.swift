@@ -37,6 +37,7 @@ class ViewController: UIViewController, ChartViewDelegate {
         yAxis.setLabelCount(6, force: false)
         yAxis.labelTextColor = .white
         yAxis.gridColor = .white
+      
         
         
         // Configure legend
@@ -46,6 +47,7 @@ class ViewController: UIViewController, ChartViewDelegate {
         var entries2 = [BarChartDataEntry]()
         
         // **FIXME** The method in which to pull data; here are two dataSets atm
+        // Format [(date:String, time:(hours:Int, minutes: Int, seconds:Int ))]
         for x in 0..<10 {
             entries.append(BarChartDataEntry(x: Double(x), y: Double.random(in: 0...30)))
             entries2.append(BarChartDataEntry(x: Double(x), y: Double.random(in: 0...30)))
