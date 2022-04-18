@@ -23,7 +23,9 @@ class ViewController: UIViewController, ChartViewDelegate {
         // Create bar chart
         let barChart = BarChartView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width,
                                                   height: view.frame.size.width))
-        // Configure the axis
+        
+        
+        // Configure the X axis
         let xAxis = barChart.xAxis
         xAxis.axisLineColor = .white
         xAxis.axisLineWidth = 2
@@ -32,14 +34,14 @@ class ViewController: UIViewController, ChartViewDelegate {
         xAxis.labelTextColor = .white
         xAxis.gridColor = .white
         
+        // Configure the Y Axis
         let yAxis = barChart.leftAxis
         yAxis.labelFont = .boldSystemFont(ofSize: 14)
         yAxis.setLabelCount(6, force: false)
         yAxis.labelTextColor = .white
         yAxis.gridColor = .white
+        yAxis.axisMinimum = 0
       
-        
-        
         // Configure legend
         
         // Supply data
@@ -52,6 +54,9 @@ class ViewController: UIViewController, ChartViewDelegate {
             entries.append(BarChartDataEntry(x: Double(x), y: Double.random(in: 0...30)))
             entries2.append(BarChartDataEntry(x: Double(x), y: Double.random(in: 0...30)))
         }
+        
+        
+        // Data set build
         let set = BarChartDataSet(entries: entries, label: "Day")
         let set2 = BarChartDataSet(entries: entries2, label: "Session")
         set.colors = ChartColorTemplates.material()
