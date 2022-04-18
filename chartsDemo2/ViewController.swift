@@ -10,14 +10,10 @@ import UIKit
 
 class ViewController: UIViewController, ChartViewDelegate {
     
-//    var barChart = BarChartView()
-    
-    lazy var xValues = [String]()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-//        barChart.delegate = self
+
         createChart()
     }
     
