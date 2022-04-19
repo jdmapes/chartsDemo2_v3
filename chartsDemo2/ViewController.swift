@@ -10,23 +10,12 @@ import UIKit
 
 class ViewController: UIViewController, ChartViewDelegate {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-
-        createChart()
-    }
-    
-    private func createChart() {
-        // Create bar chart
-        let barChart = BarChartView(frame: CGRect(x: 0, y: 0,
-            width: view.frame.size.width,
-            height: view.frame.size.width))
-        
+    // Chart constructor
+    lazy var barChart: BarChartView = {
+        let chartView = BarChartView()
         let days = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat"]
         
-        barChart.dragEnabled = true
-        
+        chartView.rightAxis.enabled = false
         
         // Configure the X axis
         let xAxis = barChart.xAxis
@@ -40,8 +29,6 @@ class ViewController: UIViewController, ChartViewDelegate {
         xAxis.valueFormatter = IndexAxisValueFormatter(values:days)
         xAxis.granularity = 1
         
-        
-        
         // Configure the Y Axis
         let yAxis = barChart.leftAxis
         yAxis.labelFont = .boldSystemFont(ofSize: 14)
@@ -50,7 +37,7 @@ class ViewController: UIViewController, ChartViewDelegate {
         yAxis.gridColor = .white
         yAxis.axisMinimum = 0
         yAxis.axisMaximum = 12
-      
+        
         // Configure legend
         let l = barChart.legend
         l.horizontalAlignment = .center
@@ -61,6 +48,30 @@ class ViewController: UIViewController, ChartViewDelegate {
         l.formSize = 9
         l.font = UIFont(name: "HelveticaNeue-Light", size: 12)!
         l.xEntrySpace = 6
+        
+        chartView.animate(xAxisDuration: 2.5)
+        
+        return chartView
+    }()
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
+        barChart.delegate = self
+        // createChart()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        // Create bar chart
+        let barChart = BarChartView(frame: CGRect(x: 0, y: 0,
+            width: view.frame.size.width,
+            height: view.frame.size.width))
+        
+        barChart.dragEnabled = true
         
         // Supply data
         var entries = [BarChartDataEntry]()
@@ -73,7 +84,6 @@ class ViewController: UIViewController, ChartViewDelegate {
             entries2.append(BarChartDataEntry(x: Double(x), y: Double.random(in: 0...12)))
         }
        
-        
         // Data set build
         let set = BarChartDataSet(entries: entries, label: "Session 1")
         let set2 = BarChartDataSet(entries: entries2, label: "Session 2")

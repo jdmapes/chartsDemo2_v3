@@ -16,7 +16,6 @@
 		2EA2FB662808BAFC00B55181 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 2EA2FB652808BAFC00B55181 /* Charts */; };
 		2EA2FB682808BD1900B55181 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA2FB672808BD1800B55181 /* SecondViewController.swift */; };
 		2EA2FB6A2808BD2B00B55181 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA2FB692808BD2B00B55181 /* ThirdViewController.swift */; };
-		2EB5728B280E169F0062B558 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB5728A280E169F0062B558 /* FourthViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +29,6 @@
 		2EA2FB5E2808BAC800B55181 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2EA2FB672808BD1800B55181 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		2EA2FB692808BD2B00B55181 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
-		2EB5728A280E169F0062B558 /* FourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +71,6 @@
 				2EA2FB5E2808BAC800B55181 /* Info.plist */,
 				2EA2FB672808BD1800B55181 /* SecondViewController.swift */,
 				2EA2FB692808BD2B00B55181 /* ThirdViewController.swift */,
-				2EB5728A280E169F0062B558 /* FourthViewController.swift */,
 			);
 			path = chartsDemo2;
 			sourceTree = "<group>";
@@ -155,7 +152,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2EB5728B280E169F0062B558 /* FourthViewController.swift in Sources */,
 				2EA2FB682808BD1900B55181 /* SecondViewController.swift in Sources */,
 				2EA2FB552808BAC500B55181 /* ViewController.swift in Sources */,
 				2EA2FB6A2808BD2B00B55181 /* ThirdViewController.swift in Sources */,
